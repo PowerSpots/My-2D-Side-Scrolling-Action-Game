@@ -5,9 +5,9 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
 
-    public float topLimit = 10.0f;
+    public float topLimit = 11.5f;
 
-    public float bottomLimit = -10.0f;
+    public float bottomLimit = -10.7f;
 
     public float followSpeed = 0.5f;
 

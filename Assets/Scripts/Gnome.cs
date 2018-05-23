@@ -5,7 +5,7 @@ using System.Collections;
 public class Gnome : MonoBehaviour
 {
 
-    // 相机跟随的目标
+    // 相机跟随的对象
     public Transform cameraFollowTarget;
 
     public Rigidbody2D ropeBody;
@@ -23,11 +23,13 @@ public class Gnome : MonoBehaviour
     public float delayBeforeReleasingGhost = 0.25f;
 
     public GameObject bloodFountainPrefab;
+    public GameObject smokeExplosionPrefab;
+
 
     bool dead = false;
 
     bool _holdingTreasure = false;
-
+    // 当holdingTreasure属性改变时，通过set方法自动改变手臂精灵
     public bool holdingTreasure
     {
         get
@@ -54,21 +56,19 @@ public class Gnome : MonoBehaviour
                     holdingArm.sprite = armHoldingEmpty;
                 }
             }
-
         }
     }
-
+    // 受到伤害的类型
     public enum DamageType
     {
         Slicing,
         Burning
     }
-
+    // 根据受到伤害的类型创建不同伤害效果的实例
     public void ShowDamageEffect(DamageType type)
     {
         switch (type)
         {
-
             case DamageType.Burning:
                 if (flameDeathPrefab != null)
                 {
@@ -98,7 +98,7 @@ public class Gnome : MonoBehaviour
 
         dead = true;
 
-        // 对于所有身体部分，随机分离它们
+        // 随机分离所有身体部分
         foreach (BodyPart part in GetComponentsInChildren<BodyPart>())
         {
 
@@ -106,8 +106,8 @@ public class Gnome : MonoBehaviour
             {
 
                 case DamageType.Burning:
-                    // 三分之一概率灼烧效果
-                    bool shouldBurn = Random.Range(0, 2) == 0;
+                    // 二分之一概率的灼烧效果
+                    bool shouldBurn = Random.Range(0, 1) == 0;
                     if (shouldBurn)
                     {
                         part.ApplyDamageSprite(type);
@@ -126,10 +126,6 @@ public class Gnome : MonoBehaviour
 
             if (shouldDetach)
             {
-
-                // 移除这个身体部分的物理效果
-                part.Detach();
-
                 // 切割伤害类型
                 if (type == DamageType.Slicing)
                 {
@@ -152,16 +148,40 @@ public class Gnome : MonoBehaviour
                     }
                 }
 
+                //// 灼烧伤害类型
+                //if (type == DamageType.Burning)
+                //{
+
+                //    if (part.bloodFountainOrigin != null &&
+                //        bloodFountainPrefab != null)
+                //    {
+
+                //        // 向这个分离部分添加烟雾预制体
+                //        GameObject fountain = Instantiate(
+                //            smokeExplosionPrefab,
+                //            part.bloodFountainOrigin.position,
+                //            part.bloodFountainOrigin.rotation
+                //        ) as GameObject;
+
+                //        fountain.transform.SetParent(
+                //            this.cameraFollowTarget,
+                //            false
+                //        );
+                //    }
+                //}
+
                 // 从父对象中分离并摧毁关节
                 var allJoints = part.GetComponentsInChildren<Joint2D>();
-                foreach (Joint2D joint in allJoints)
+                foreach (Joint2D joints in allJoints)
                 {
-                    Destroy(joint);
+                    Destroy(joints);
                 }
             }
+            // 移除这个身体部分
+            part.Detach();
         }
 
-        // 从整个游戏中移除矮人
+        // 通过RemoveAfterDelay组件从整个游戏中移除矮人
         var remove = gameObject.AddComponent<RemoveAfterDelay>();
         remove.delay = delayBeforeRemoving;
 
@@ -171,6 +191,7 @@ public class Gnome : MonoBehaviour
 
     IEnumerator ReleaseGhost()
     {
+        // 没有鬼魂预制体，退出协程
         if (ghostPrefab == null)
         {
             yield break;
@@ -184,6 +205,4 @@ public class Gnome : MonoBehaviour
             Quaternion.identity
         );
     }
-
-
 }

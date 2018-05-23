@@ -472,7 +472,7 @@ Transform:
   m_GameObject: {fileID: 1578343679366778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.06, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4747527266433656}
   - {fileID: 4504965802134698}
@@ -756,14 +756,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.40043616, y: 0.63596654}
+    - - {x: 0.5943731, y: 0.6359669}
       - {x: -0.58702236, y: -0.05501628}
       - {x: -0.15094435, y: -0.73620963}
       - {x: -0.03374493, y: -3.7402065}
       - {x: 0.6969949, y: -4.7405815}
       - {x: 1.907911, y: -3.83971}
       - {x: 1.3049592, y: -3.1538293}
-      - {x: 0.805442, y: -0.3826468}
 --- !u!60 &60407378209329710
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -843,7 +842,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.17, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -870,8 +869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: 8afa1c3dcf75d4b8eb95a65ceac96a4c, type: 3}
+  burnedSprite: {fileID: 21300000, guid: c9be8ea6c50314e18911f059db74cb5c, type: 3}
   bloodFountainOrigin: {fileID: 4787693560809372}
 --- !u!114 &114356790095171484
 MonoBehaviour:
@@ -896,8 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: 20e9587363bb44d9992ff9e371975b60, type: 3}
+  burnedSprite: {fileID: 21300000, guid: 9e7e5dd6f8cda4ae582d768665b2c99b, type: 3}
   bloodFountainOrigin: {fileID: 0}
 --- !u!114 &114825523099986726
 MonoBehaviour:
@@ -910,8 +909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: 9ab41e17d632840159f0a0a83bac692f, type: 3}
+  burnedSprite: {fileID: 21300000, guid: d9af2a0bf4dfa48d8aa416b0730053e0, type: 3}
   bloodFountainOrigin: {fileID: 4348891392447818}
 --- !u!114 &114886657288777446
 MonoBehaviour:
@@ -924,8 +923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: 16296a8f8be954235bc18fc5a20518cf, type: 3}
+  burnedSprite: {fileID: 21300000, guid: ae4e718476b654f95a5b872306a67625, type: 3}
   bloodFountainOrigin: {fileID: 4354255350016144}
 --- !u!114 &114926555248148064
 MonoBehaviour:
@@ -938,8 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: e93188065d76f4346b397475472ede76, type: 3}
+  burnedSprite: {fileID: 21300000, guid: a85ad74fd4b5b4b31a8915ab417dcbde, type: 3}
   bloodFountainOrigin: {fileID: 4500917669560108}
 --- !u!114 &114972743551165228
 MonoBehaviour:
@@ -952,8 +951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c99ce92a6388c4f8c4ec8df51bf6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachedSprite: {fileID: 0}
-  burnedSprite: {fileID: 0}
+  detachedSprite: {fileID: 21300000, guid: 38c4b3fe54b99498bbb449ea10e5516c, type: 3}
+  burnedSprite: {fileID: 21300000, guid: 6818f2e0b32214f168f7c4340fa6e4c7, type: 3}
   bloodFountainOrigin: {fileID: 4428111484211438}
 --- !u!114 &114997813157622008
 MonoBehaviour:
@@ -979,6 +978,7 @@ MonoBehaviour:
   delayBeforeReleasingGhost: 0.25
   bloodFountainPrefab: {fileID: 1739289423822396, guid: 7f7fc9f7a01fd074bb90fbdb25eea814,
     type: 2}
+  smokeExplosionPrefab: {fileID: 117944, guid: 6e6cd55a91a06c5478f5d15d1b59c599, type: 2}
 --- !u!212 &212197224392811372
 SpriteRenderer:
   m_ObjectHideFlags: 1

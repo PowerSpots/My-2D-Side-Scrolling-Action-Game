@@ -10,4 +10,5 @@ public class DestoryZone : MonoBehaviour
         if (collision.gameObject.CompareTag("Untagged"))
             Destroy(collision.gameObject);
     }
+    
 }

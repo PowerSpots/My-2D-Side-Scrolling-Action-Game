@@ -98,7 +98,7 @@ public class Gnome : MonoBehaviour
 
         dead = true;
 
-        // 随机分离所有身体部分
+        // 获取所有身体对象并应用效果
         foreach (BodyPart part in GetComponentsInChildren<BodyPart>())
         {
 
@@ -106,8 +106,8 @@ public class Gnome : MonoBehaviour
             {
 
                 case DamageType.Burning:
-                    // 二分之一概率的灼烧效果
-                    bool shouldBurn = Random.Range(0, 1) == 0;
+                    // 三分之一概率的灼烧效果
+                    bool shouldBurn = Random.Range(0, 2) == 0;
                     if (shouldBurn)
                     {
                         part.ApplyDamageSprite(type);
@@ -121,8 +121,8 @@ public class Gnome : MonoBehaviour
                     break;
             }
 
-            // 三分之一的概率被从身体中分离
-            bool shouldDetach = Random.Range(0, 2) == 0;
+            // 二分之一的概率被从身体中分离
+            bool shouldDetach = Random.Range(0, 1) == 0;
 
             if (shouldDetach)
             {
@@ -148,28 +148,6 @@ public class Gnome : MonoBehaviour
                     }
                 }
 
-                //// 灼烧伤害类型
-                //if (type == DamageType.Burning)
-                //{
-
-                //    if (part.bloodFountainOrigin != null &&
-                //        bloodFountainPrefab != null)
-                //    {
-
-                //        // 向这个分离部分添加烟雾预制体
-                //        GameObject fountain = Instantiate(
-                //            smokeExplosionPrefab,
-                //            part.bloodFountainOrigin.position,
-                //            part.bloodFountainOrigin.rotation
-                //        ) as GameObject;
-
-                //        fountain.transform.SetParent(
-                //            this.cameraFollowTarget,
-                //            false
-                //        );
-                //    }
-                //}
-
                 // 从父对象中分离并摧毁关节
                 var allJoints = part.GetComponentsInChildren<Joint2D>();
                 foreach (Joint2D joints in allJoints)
@@ -184,25 +162,5 @@ public class Gnome : MonoBehaviour
         // 通过RemoveAfterDelay组件从整个游戏中移除矮人
         var remove = gameObject.AddComponent<RemoveAfterDelay>();
         remove.delay = delayBeforeRemoving;
-
-        //开始鬼魂协程
-        StartCoroutine(ReleaseGhost());
-    }
-
-    IEnumerator ReleaseGhost()
-    {
-        // 没有鬼魂预制体，退出协程
-        if (ghostPrefab == null)
-        {
-            yield break;
-        }
-
-        yield return new WaitForSeconds(delayBeforeReleasingGhost);
-
-        Instantiate(
-            ghostPrefab,
-            transform.position,
-            Quaternion.identity
-        );
     }
 }

@@ -67,15 +67,18 @@ This is an 'About The Game' more than a Readme.md document
 
 Introduction    
 
-    The player con‐ trols a garden gnome, who’s being lowered by an attached rope into a well. At the bottom of the well there’s some treasure. The catch is that the well is filled with traps that kill the gnome if he touches them.
+    The player controls a garden gnome, who’s being lowered by an attached rope into a well. 
+    At the bottom of the well there’s some treasure. 
+    The catch is that the well is filled with traps that kill the gnome if he touches them.
 
     This game relies on the 2D graphics and physics features of Unity, in addition to fairly heavy use of the UI system.
 
-    The gnome is a “ragdoll”—a collection of pieces that are connected via joints, with each piece an independently simulated rigid body.
+    The gnome is a “ragdoll” — a collection of pieces that are connected via joints, with each piece an independently simulated rigid body.
 
     The rope is made in a similar way: it’s a collection of rigid bodies, all connected to each other with joints.
 
-    The game’s camera has a script running that keeps its position linked to the vertical position of the gnome, but also keeps the camera from showing anything above the top of the well or below the bottom of the well. 
+    The game’s camera has a script running that keeps its position linked to the vertical position of the gnome, 
+    but also keeps the camera from showing anything above the top of the well or below the bottom of the well. 
 
 
 Rules   

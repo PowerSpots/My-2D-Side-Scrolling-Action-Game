@@ -973,12 +973,10 @@ MonoBehaviour:
   deathPrefab: {fileID: 1300626055419374, guid: 7a1cd7b42d48d3c438cc8acf93827c43,
     type: 2}
   flameDeathPrefab: {fileID: 0}
-  ghostPrefab: {fileID: 0}
   delayBeforeRemoving: 3
   delayBeforeReleasingGhost: 0.25
   bloodFountainPrefab: {fileID: 1739289423822396, guid: 7f7fc9f7a01fd074bb90fbdb25eea814,
     type: 2}
-  smokeExplosionPrefab: {fileID: 117944, guid: 6e6cd55a91a06c5478f5d15d1b59c599, type: 2}
 --- !u!212 &212197224392811372
 SpriteRenderer:
   m_ObjectHideFlags: 1

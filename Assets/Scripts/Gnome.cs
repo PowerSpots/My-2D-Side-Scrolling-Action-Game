@@ -17,14 +17,11 @@ public class Gnome : MonoBehaviour
 
     public GameObject deathPrefab;
     public GameObject flameDeathPrefab;
-    public GameObject ghostPrefab;
 
     public float delayBeforeRemoving = 3.0f;
     public float delayBeforeReleasingGhost = 0.25f;
 
     public GameObject bloodFountainPrefab;
-    public GameObject smokeExplosionPrefab;
-
 
     bool dead = false;
 
